@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Blog</title>
+    <style>
+        /* Reset margin and padding for the whole page */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #F5F3E9;
+        }
+
+        /* Adjusted header */
+        header {
+  margin: 0;
+  padding: 10px 10px; /* Reduced padding for the header */
+  width: 100%;
+  z-index: 1000;
+  background-color: #135cb0;
+  position: fixed; /* Keep the header fixed */
+  top: 0; /* Stick to the top */
+  display: flex; /* Use flex to align items in a row */
+  justify-content:space-evenly; /* Space between title and nav */
+  align-items: center; /* Center align items vertically */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem; /* Reduced font size for the title */
+  color: white; /* Change text color for better visibility */
+}   
+nav {
+     display: flex; /* Use flexbox for alignment */
+    flex-grow: 1; /* Allow nav to grow and take available space */
+    justify-content: flex-end;
+   
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  justify-content: space-around;
+
+}
+
+nav ul li {
+display: inline-block;
+margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem; /* Reduced font size for nav links */
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+}
+@media  screen and (max-width: 768px) {
+  nav-ul{
+    flex-direction: column;
+    align-items:flex-end;
+  }
+}
+.content {
+  flex: 1;
+  text-align: left; /* Center align content */
+  justify-content: flex-start; 
+
+}
+
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 15px;
+}
+
+.content h1 span {
+  color: #111;
+}
+
+        /* Add padding to account for the fixed header and create space below it */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            margin: 120px auto 20px auto; /* Adjusted top margin for space below the header */
+            gap: 20px;
+            border-radius: 30px;
+        }
+
+        .container {
+            width: 65%;
+            padding: 20px 30px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding-top: 60px;
+            border-radius: 15px;
+        }
+
+        .media-container {
+            width: 30%;
+            padding: 20px 30px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding-top: 60px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            color: #135cb0;
+        }
+
+        .blog-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .blog-form input[type="text"],
+        .blog-form textarea,
+        .blog-form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .blog-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .blog-form button {
+            background: #135cb0;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: ease 0.3s;
+        }
+
+        .blog-form button:hover {
+            background: #1E3A60;
+        }
+
+        .blog-list {
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        .blog-post h3 {
+            margin: 0;
+            color: #2E4A70;
+        }
+
+        .blog-post p {
+            margin: 5px 0;
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+       
+        .media-container img,
+        .media-container iframe {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .media-container h2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #2E4A70;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+          <h1>FITZ <span> HUB</span></h1>
+      </div>
+    
+        <nav>
+        
+          <ul>
+              <li><a href="chth.html">Home</a></li>
+              <li><a href="BMI.html">BMI</a></li>
+              <li><a href="blog p1.html">Submit</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="about.html">About us</a></li>
+    
+          </ul>
+      </nav>
+       
+      </header>
+
+    
+    <div class="main-container">
+       
+        <div class="media-container">
+            <h2></h2>
+           
+            <img src="https://images.pexels.com/photos/3757950/pexels-photo-3757950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Health & Wellness Image">
+            <img src="istockphoto-1217029407-612x612.jpg" alt="Health and Wellness">
+        </div>
+
+        
+        <div class="container">
+            <h2>Add a New Blog Post</h2>
+            <form class="blog-form" id="blogForm" action="submit.php" method="post">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter blog title" required>
+                
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" placeholder="Enter your name" required>
+                
+                <label for="content">Content</label>
+                <textarea id="content" name="content" placeholder="Write your blog content here..." required></textarea>
+               
+                
+                <button type="submit">Submit Blog</button>
+             </form>
+
+          
+    <script>
+        function submitBlog() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const content = document.getElementById('content').value;
+            const imageInput = document.getElementById('image');
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageHTML = e.target.result ? `<img src="${e.target.result}" alt="Blog Image">` : "";
+                
+                const blogList = document.getElementById('blogList');
+                const newPost = document.createElement('div');
+                newPost.classList.add('blog-post');
+
+                newPost.innerHTML = `
+                    <h3>${title}</h3>
+                    <p><strong>By:</strong> ${author}</p>
+                    <p>${content}</p>
+                    ${imageHTML}
+                `;
+
+                blogList.appendChild(newPost);
+            };
+
+            if (imageInput.files && imageInput.files[0]) {
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                reader.onload();
+            }
+
+            document.getElementById('blogForm').reset();
+        }
+    </script>
+</body>
+</html>

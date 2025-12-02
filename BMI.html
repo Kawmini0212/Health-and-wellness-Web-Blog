@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f6f9;
+        }
+        h1, h2 {
+            color: #3f51b5;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: left;
+            position: relative;
+        }
+        header {
+  margin: 0;
+  padding: 10px 10px; /* Reduced padding for the header */
+  width: 100%;
+  z-index: 1000;
+  background-color: #135cb0;
+  position: fixed; /* Keep the header fixed */
+  top: 0; /* Stick to the top */
+  display: flex; /* Use flex to align items in a row */
+  justify-content:space-evenly; /* Space between title and nav */
+  align-items: center; /* Center align items vertically */
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem; /* Reduced font size for the title */
+  color: white; /* Change text color for better visibility */
+}
+nav {
+     display: flex; /* Use flexbox for alignment */
+    flex-grow: 1; /* Allow nav to grow and take available space */
+    justify-content: flex-end;
+   
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  justify-content: space-around;
+
+}
+
+nav ul li {
+display: inline-block;
+margin: 0 15px;
+} 
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem; /* Reduced font size for nav links */
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+}
+@media  screen and (max-width: 768px) {
+  nav-ul{
+    flex-direction: column;
+    align-items:flex-end;
+  }
+}
+.content {
+  flex: 1;
+  text-align: left; /* Center align content */
+  justify-content: flex-start; 
+
+}
+
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 15px;
+}
+
+.content h1 span {
+  color: #111;
+}
+
+        .background-container {
+            display: flex;
+            padding-top: 20px;
+            margin-top: 70px;
+        }
+     
+        .BMI {
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px 60px;
+            border-radius: 30px;
+            background-color: white; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            position: relative;  
+            z-index: 10;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+        .BMI:hover{
+            transform: scale(1.08); 
+        }
+        .bmi-formula-box{
+            transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+        .bmi-formula-box:hover{
+            transform: scale(1.08); /* Animates size change */
+
+        }
+       
+
+        .BMI h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .BMI input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        .BMI input[type="button"], 
+        .BMI input[type="reset"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #135cb0;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .BMI input[type="button"]:hover, 
+        .BMI input[type="reset"]:hover {
+            background-color: #135cb0;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color:#135cb0;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+       
+
+      
+
+        .left-side, .right-side {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+
+        }
+
+        .left-side {
+    background-color: #f0f0f0;
+    width: 400px; 
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    align-items:center; 
+        }
+
+        .right-side {
+            background-color: #fff;
+            display: flex;
+            justify-content: left;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .right-side h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .right-side p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .background-container {
+                flex-direction: column;
+            }
+
+            .BMI {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .left-side, .right-side {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+        table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table thead {
+    background-color: #135cb0;
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.bmi-formula-box, .limitations {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; 
+    text-align: left; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 15px; 
+}
+.limitations{
+    text-align: justify;
+}
+
+.bmi-formula-box h2, .limitations h2{
+    color: #135cb0; 
+    margin-bottom: 10px; 
+}
+.image {
+    width: 100%;
+    height: auto; 
+    margin-top: 15px; 
+    border-radius: 10px; 
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="content">
+          <h1>FITZ <span> HUB</span></h1>
+      </div>
+    
+        <nav>
+        
+          <ul>
+              <li><a href="chth.html">Home</a></li>
+              <li><a href="BMI.html">BMI</a></li>
+              <li><a href="blog p1.html">Submit</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="about.html">About us</a></li>
+    
+          </ul>
+      </nav>
+       
+      </header>
+    
+    <div class="background-container">
+        <div class="left-side">
+            <div class="BMI">
+                <h1>BMI Calculator</h1>
+                <form method="post" enctype="multipart/form-data">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" name="age" placeholder="Enter your age">
+                    
+                    <label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+    
+                    <label for="height">Height (in meters):</label>
+                    <input type="text" id="height" name="height" placeholder="Enter your height"><br>
+    
+                    <label for="weight">Weight (in kg):</label>
+                    <input type="text" id="weight" name="weight" placeholder="Enter your weight"><br><br>
+    
+                    <input type="button" value="Calculate BMI" onclick="calculateBMI()">
+                    <input type="reset" value="Reset">
+    
+                    <div id="result" class="result-box">
+                        <p id="bmi-result"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="bmi-formula-box">
+                <h2>BMI Formula</h2>
+                <p>Below are the equations used for calculating BMI in the International System of Units (SI) and the US customary system (USC) using a 5'10", 160-pound individual as an example:<br>
+
+                    USC Units:<br>
+                    BMI = 703*	
+                    mass (lbs)/
+                    height2 (in)
+                     = 703*	
+                    160/
+                    702
+                     = 23.0<br><br>
+                    SI, Metric Units:<br>
+                    BMI = 	
+                    mass (kg)/
+                    height2 (m)
+                     = 	
+                    72.57/
+                    1.7782
+                     = 23.0
+                    </p>
+                    <img src="lassana.jpg" class="image">
+            </div>
+            <div class="limitations">
+                <h2>Limitations of BMI</h2>
+                <p> Although BMI is a widely used and useful indicator of healthy body weight, it does have its limitations. BMI is only an estimate that cannot take body composition into account. Due to a wide variety of body types as well as distribution of muscle, bone mass, and fat, BMI should be considered along with other measurements rather than being used as the sole method for determining a person's healthy body weight.<br><br>
+
+                    <strong>In adults:</strong><br>
+                    
+                    BMI cannot be fully accurate because it is a measure of excess body weight, rather than excess body fat. BMI is further influenced by factors such as age, sex, ethnicity, muscle mass, body fat, and activity level, among others. For example, an older person who is considered a healthy weight, but is completely inactive in their daily life may have significant amounts of excess body fat even though they are not heavy. This would be considered unhealthy, while a younger person with higher muscle composition of the same BMI would be considered healthy. In athletes, particularly bodybuilders who would be considered overweight due to muscle being heavier than fat, it is entirely possible that they are actually at a healthy weight for their body composition. Generally, according to the CDC:<br>
+                    <ul>
+                    <li>Older adults tend to have more body fat than younger adults with the same BMI.</li>
+                    <li>Women tend to have more body fat than men for an equivalent BMI.</li>
+                    <li>Muscular individuals and highly trained athletes may have higher BMIs due to large muscle mass.</li>
+                 </ul>
+                    <strong>In children and adolescents:</strong><br>
+                    
+                    The same factors that limit the efficacy of BMI for adults can also apply to children and adolescents. Additionally, height and level of sexual maturation can influence BMI and body fat among children. BMI is a better indicator of excess body fat for obese children than it is for overweight children, whose BMI could be a result of increased levels of either fat or fat-free mass (all body components except for fat, which includes water, organs, muscle, etc.). In thin children, the difference in BMI can also be due to fat-free mass.<br><br>
+                    
+                    That being said, BMI is fairly indicative of body fat for 90-95% of the population, and can effectively be used along with other measures to help determine an individual's healthy body weight.</p>
+            </div>
+            
+            
+        </div>
+    
+        <div class="right-side">
+            <h2> BMI Introduction</h2>
+            <p>
+                BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between. These ranges of BMI vary based on factors such as region and age, and are sometimes further divided into subcategories such as severely underweight or very severely obese. Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful indicator of whether any additional testing or action is required. Refer to the table below to see the different categories based on BMI that are used by the calculator.
+            </p>
+            <br><br>
+            <h2>BMI table for adults</h2>
+            <p>This is the World Health Organization's (WHO) recommended body weight based on BMI values for adults. It is used for both men and women, age 20 or older.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classification</th>
+                        <th>BMI range - kg/m²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Severe Thinness</td>
+                        <td> < 16</td>
+                    </tr>
+                    <tr>
+                        <td>Moderate Thinness</td>
+                        <td>16 - 17</td>
+                    </tr>
+                    <tr>
+                        <td>Mild Thinness</td>
+                        <td>17 - 18.5</td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>18.5 - 25</td>
+                    </tr>
+                    <tr>
+                        <td>Overweight</td>
+                        <td>25 - 30</td>
+                    </tr>
+                    <tr>
+                        <td>Obese Class I</td>
+                        <td>30 - 35</td>
+                    </tr>
+                    <tr>
+                        <td>Obese Class II</td>
+                        <td>35 - 40</td>
+                    </tr>
+                    <tr>
+                        <td>Obese Class III</td>
+                        <td>> 40</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <h2>BMI chart for adults</h2>
+            <p>This is a graph of BMI categories based on the World Health Organization data. The dashed lines represent subdivisions within a major categorization.
+
+            </p>
+            <img src="chart.png">
+            <h2>BMI table for children and teens, age 2-20</h2>
+            <p>The Centers for Disease Control and Prevention (CDC) recommends BMI categorization for children and teens between age 2 and 20.
+
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Percentile Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Underweight</td>
+                        <td><5%</td>
+                    </tr>
+                    <tr>
+                        <td>Healthy Weight</td>
+                        <td>5%-85%</td>
+                    </tr>
+                    <tr>
+                        <td>At rist of Overweight</td>
+                        <td>85%-95%</td>
+                    </tr>
+                    <tr>
+                        <td>Overweight</td>
+                        <td>>95%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Health and Wellness, Inc.   </p>
+      </footer>
+    
+    <script src="BMI.js"></script>
+    
+</body>
+</html>

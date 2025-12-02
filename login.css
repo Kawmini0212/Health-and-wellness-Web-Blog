@@ -1,0 +1,13 @@
+#background-container {
+    background-image: url('core-strength-fitness.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.98;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; 
+  }
+ 

@@ -1,0 +1,86 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+}
+
+
+h1 {
+    text-align: center;
+    color: #2367ab;
+}
+
+
+p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+.team {
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+
+
+h2 {
+    text-align:center;
+    color: #2367ab;
+}
+
+.team-member {
+    display: flex;
+    justify-content: space-evenly; /* Distributes space between child divs */
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 200px;
+}
+
+.member-address,
+.member-telephone,
+.member-email {
+    flex: 1; /* Each child div takes equal space */
+    padding: 10px; /* Space within each div */
+}
+
+.member-address h4,
+.member-telephone h4,
+.member-email h4 {
+    margin-bottom: 10px; /* Space between heading and paragraph */
+}
+
+
+
+
+.team-member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #28a745;
+}
+
+.team-member p {
+    font-size: 1.1em;
+    color: #555;
+}
+

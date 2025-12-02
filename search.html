@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="search.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health & Wellness - Search and Filter</title>
+</head>
+<body>
+ 
+ <main>
+  <header>
+    <div class="content">
+      <h1>FITZ <span> HUB</span></h1>
+  </div>
+
+    <nav>
+    
+      <ul>
+          <li><a href="chth.html">Home</a></li>
+          <li><a href="BMI.html">BMI</a></li>
+          <li><a href="blog p1.html">Submit</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="about.html">About us</a></li>
+
+
+      </ul>
+  </nav>
+   
+  </header>
+
+
+  <div class="content-box">
+    <h2 class="content-heading">Health and Wellness Tips for You..</h2>
+    <p class="content-paragraph">Explore our collection of practical tips designed to enhance your health and well-being. From nutritious eating habits and effective exercise routines to mindfulness practices and stress management techniques, our curated resources empower you to make informed choices. Whether you're looking to boost your physical fitness, improve mental clarity, or adopt a balanced lifestyle, our tips provide simple yet effective strategies to support your journey toward optimal health.</p>
+</div>
+
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for products...">
+    <button id="searchButton" onclick="searchItems()">Search</button>
+  </div>
+
+  <div class="filter-container">
+    <label for="filterSelect">Filter by Category:</label>
+    <select id="filterSelect" onchange="filterItems()">
+      <option value="all">All</option>
+      <option value="nutrition">Nutrition</option>
+      <option value="exercise">Exercise</option>
+      <option value="mental">Mental</option>
+    </select>
+  </div>
+
+  <div id="itemList">
+    <div class="item" data-category="nutrition">Multivitamins (Nutrition)</div>
+    <div class="item" data-category="nutrition">Protein Bars (Nutrition)</div>
+    <div class="item" data-category="exercise">Treadmill (Exercise)</div>
+    <div class="item" data-category="exercise">Jump Rope (Exercise)</div>
+    <div class="item" data-category="mental">Meditation Guide (Mental)</div>
+    <div class="item" data-category="mental">Aromatherapy Kit (Mental)</div>
+  </div>
+</main>
+  <footer>
+    <p>&copy; 2024 Health and Wellness, Inc.</p>
+  </footer>
+
+  <script src="search.js"></script>
+  
+</body>
+</html>

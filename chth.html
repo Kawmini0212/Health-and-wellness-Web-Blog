@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health and Wellness Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(5.jpg) no-repeat center center fixed; 
+            background-size: cover; 
+            color: #333; 
+        }
+
+        header {
+            margin: 0;
+            padding: 10px 10px;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(51, 55, 58, 0.8); 
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 15px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        
+        .section-title {
+            font-size: 50px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            margin-bottom: 5px;
+            position: relative;
+            margin-top: 200px;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #ffeb3b;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            padding: 20px;
+        }
+
+        #searchBar {
+            width: 450px;
+            padding: 20px;
+            font-size: 16px;
+            border: 2px solid #135cb0; /* Added border style */
+            border-radius: 10px;
+            outline: none;
+            position: relative;
+        }
+
+        #searchButton, #resetButton {
+            padding: 20px 20px;
+            background-color: rgba(51, 55, 58, 0.8);
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            margin-left: 4px; /* Align with search bar */
+        }
+
+        #searchButton:hover, #resetButton:hover {
+            background-color: #0f4a93;
+        }
+
+        /* Blog Post Styles */
+        .topic-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .topic-box {
+            width: 23%; /* Change width to 23% for four in a row */
+            margin: 15px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .topic-box:hover {
+            transform: scale(1.05); /* Slightly increase the size */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .topic-box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .topic-box h3 {
+            font-size: 22px;
+            color: #135cb0;
+            border-bottom: 2px solid #135cb0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .topic-box p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #2E4A70;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .topic-box {
+                width: 45%; /* Adjusted for smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .topic-box {
+                width: 90%; /* Stack in one column for very small screens */
+            }
+        }
+
+        .content {
+            flex: 1;
+            text-align: left; /* Center align content */
+            justify-content: flex-start;
+        }
+
+        .content h1 {
+            color: #fff;
+            font-size: 60px;
+            letter-spacing: 15px;
+        }
+
+        .content h1 span {
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <h1>FITZ <span>HUB</span></h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="chth.html">Home</a></li>
+                <li><a href="BMI.html">BMI</a></li>
+                <li><a href="blog p1.html">Submit</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search-section">
+        <h2 class="section-title">Search Blogs</h2>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search blog posts...">
+            <button id="searchButton" onclick="searchPost()">Search</button>
+            <button id="resetButton" onclick="resetSearch()">Reset</button> <!-- New Reset Button -->
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="topic-container" id="blogPosts">
+            
+            <div class="topic-box">
+                <img src="cc-health-trends.jpg" alt="Healthy Food">
+                <a href="essential.html"><h3>Nutrition Tips </h3></a>
+                <p>Eating a balanced diet is essential for maintaining good health. Include fruits, vegetables, and lean proteins in your meals.</p>
+            </div>
+        
+            
+
+            <div class="topic-box">
+                <img src="depositphotos_16640299-stock-photo-young-woman-cooking-vitamins-and.jpg" alt="minerals">
+                <a href="boost.html"><h3>Boost Your Minerals</h3></a>
+                <p>Calcium and Magnesium are vital for health. Add sea-sourced Calcium supplements and well-absorbed Magnesium to fill nutrient gaps.</p>
+            </div>
+
+            <div class="topic-box">
+                <img src="PhysicalActivityLP_804x482.jpg" alt="fitness">
+                <a href="track.html"><h3>Track Your Fitness</h3></a>
+                <p>Track your fitness with apps or fitness bands to ensure you're getting enough exercise each week.</p>
+            </div>
+
+            <div class="topic-box">
+                <img src="image8.jpg" alt="Healthy fruits">
+                <a href="essential.html"><h3>Eat More Fruits and Vegetables</h3></a>
+                <p>Fruits and vegetables are rich in nutrients. Eat a rainbow of colors to get a variety of phytonutrients.</p>
+            </div>
+
+            <div class="topic-box">
+                <img src="image7.jpg" alt="drink water">
+                <a href="drink.html"><h3>Drink Water Regularly</h3></a>
+                <p>Stay hydrated throughout the day by drinking water to avoid feeling sore, tired, and unfocused.</p>
+            </div>
+
+            <div class="topic-box">
+                <img src="Herb Quality - Comparison 3.jpg" alt="herb & spice">
+                <a href="eat.html"><h3>Eat More Herbs & Spices</h3></a>
+                <p>Herbs like Turmeric and Ginger offer health benefits. Add them to meals or smoothies for more nutrients.</p>
+            </div>
+
+            <div class="topic-box" >
+                <img src="image6.jpg" alt="Health matters">
+                <a href="multi.html"> <h3>Make Health a Priority</h3></a>
+                <p>Set goals and create a plan for your health. Regular check-ups can help you stay on track.</p>
+            </div>
+
+            <div class="topic-box">
+                <img src="image4.jpg" alt="Lifestyle">
+                <a href="mind.html"><h3>Mind Your Lifestyle Choices</h3></a>
+                <p>Your choices affect your health. Stay away from smoking and limit alcohol for a healthier lifestyle.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Health and Wellness Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchPost() {
+            const input = document.getElementById('searchBar').value.toLowerCase();
+            const posts = document.querySelectorAll('.topic-box');
+
+            posts.forEach(post => {
+                const title = post.querySelector('h3').textContent.toLowerCase();
+                const content = post.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(input) || content.includes(input)) {
+                    post.style.display = 'block'; // Show matching post
+                } else {
+                    post.style.display = 'none'; // Hide non-matching post
+                }
+            });
+        }
+
+        function resetSearch() {
+            document.getElementById('searchBar').value = ''; // Clear the search input
+            searchPost(); // Call searchPost to reset visibility of all posts
+        }
+    </script>
+</body>
+</html>

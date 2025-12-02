@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Image Slideshow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F3E9;
+        }
+
+        header {
+            background-color: #2E4A70;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Main container to hold the body content with border and spacing */
+        .main-body-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            margin: 20px;
+            border: 2px solid #2E4A70; /* Border around body part */
+            border-radius: 50px;
+            background-color: #464e3800;
+        }
+
+
+        .center-text-position {
+            text-align: center;
+            
+            background-color: white;
+        }
+
+        /* Text styling */
+        h2 {
+            font-size: 36px;
+            color: #2E4A70;
+        }
+
+        /* Two-column layout for the content */
+        .column {
+            flex: 1;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .column h2 {
+            color: #2E4A70;
+        }
+        .column h3 {
+            font-size: 28px;
+            color: #2E4A70;
+            border-bottom: 2px solid #2E4A70;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .column img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 500px;
+        }
+
+        .content {
+            text-align: center;
+            margin: 20px;
+            font-size: 24px;
+        }
+
+        .dots-container {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        #submit-blog {
+            text-align: center;
+            margin: 50px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border: 2px solid #2E4A70;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #submit-blog h2 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        #submit-blog a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #2E4A70;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-blog a:hover {
+            background-color: #2E4A70;
+        }
+
+        footer {
+            background-color: #2E4A70;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Health and Wellness Blog</h1>
+    </header>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <img src="What-is-the-importance-of-physical-fitness.webp" class="slides" style="display: block;">
+        <img src="Organic vs non-organic.webp" class="slides">
+        <img src="loverica-yoga-font.jpg" class="slides">
+        <img src="New-Project-94.jpg" class="slides">
+        <img src="arual-yoga-font.jpg" class="slides">
+        <img src="how-to-sleep-better-2200x1200.jpeg" class="slides">
+        <img src="image6.jpg" class="slides">
+        <img src="arual-yoga-font.jpg" class="slides">
+
+        <div class="dots-container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Center Text Container -->
+    <div class="center-text-position">
+        <h2>Why is Wellness Important?</h2>
+    <p>         In today’s world, we continually experience new challenges that affect our physical, mental,</p>
+    <p>         and social well-being. Many of us have felt tired and stressed, which is why wellness and </p>
+    <p>         self-care are more important than ever. Your wellness journey is an ongoing one, and YOU are</p>
+    <p>         in the driver’s seat! We’re sharing some curated ideas to care for your many dimensions of </p>
+    <p>         wellness, so you can nurture your mind and nourish your body. Here are 24 health and wellness </p>
+    <p>         tips that you can use to support your wellness journey in 2024.</p>
+    </div>
+
+    <!-- Main Body Container -->
+    <div class="main-body-container">
+        <!-- Left Column -->
+        <div class="column">
+            <h3>Nutrition Tips</h3>
+            <img src="cc-health-trends.jpg" alt="Healthy Food">
+            <p>Eating a balanced diet is essential for maintaining good health. Make sure to include plenty of fruits, vegetables, and lean proteins in your meals.</p><br><br>
+            <h3>Boost Your Minerals</h3>
+            <img src="depositphotos_16640299-stock-photo-young-woman-cooking-vitamins-and.jpg" alt="minerals">
+            <p>Certain minerals are indispensable for human health, particularly Calcium and Magnesium. These two compounds are essential for strong bones and teeth, proper heartbeat, muscle health, nerve function, and much more. However, many Americans may lack these vitalizing earth elements. A multi-year study of over 16,000 American adults found that 39% weren’t meeting average requirements for Calcium intake and 46% were below requirements for Magnesium. Well-absorbed mineral supplements like our sea-sourced plant Calcium complex and our well-absorbed Magnesium formula can help fill nutrient gaps. Get peace of mind that you’re maintaining strong, healthy foundations!</p><br><br>
+            <h3>Track Your Fitness</h3>
+            <img src="PhysicalActivityLP_804x482.jpg" alt="fitness">
+            <p>If you’re exercising, that’s fantastic! But how do you know if you’re getting enough exercise and variety from week to week? Fortunately, there are a lot of ways to track your fitness. Many fitness tracking apps are available for your phone or smartwatch, and most of them are free. A fitness tracking app can help you understand how active you are every day, so you can set goals or adjust your lifestyle as needed. You can also try an exercise watch or fitness band, which can track your heart rate and tell you how many steps you take daily. If you want a technology-free solution, use a notebook to log your efforts, or get a workout buddy and support each other.</p><br><br>
+            <h3>Eat More Fruits and Vegetables</h3>
+            <img src="image8.webp" alt="Healthy fruits">
+            <p>Many people struggle to get enough fruits and vegetables in their daily meals. Fruits and vegetables are the cornerstones of a healthy diet because they’re packed with nutrients and provide dietary fiber. Different colors deliver different phytonutrients, so try to eat a rainbow of options.</p><br><br>
+            <h3>Drink Water Regularly</h3>
+            <img src="image7.jpg" alt="drink water">
+            <p>Not drinking enough water throughout the day can leave you feeling sore, tired, and unfocused. Stay hydrated by drinking water throughout the day.</p><br><br>
+            <h3>Eat More Herbs & Spices</h3>
+            <img src="Herb Quality - Comparison 3.webp" alt="herb & spiece">
+            <p>Let’s face it—the typical American diet isn’t exactly bursting with studied herbs like Turmeric, Ginger, and Green Tea. But these kinds of herbal allies are packed with unique phytonutrients that can support your health. Turmeric supports healthy inflammation response for example, while Ginger is a powerful digestive aid and Green Tea has antioxidant action that helps protect cells. Pack more herbs and spices into your day by adding them to smoothies and entrees, or drinking them in herbal teas. Add high-quality herbal supplements to your routine to make sure you’re getting key phytonutrients for targeted benefits</p><br><br>    
+            <h3>Take a Multivitamin</h3>
+            <img src="taking_supplements_correctly_alarm_clock_and_capsules_2000x.webp" alt="vitamins">
+            <p>A balanced diet helps you maintain good physical and mental health. However, busy adults are prone to making unhealthy meal choices or skipping meals altogether, so they may not get enough nutrients on a given day. Taking a multivitamin is an easy way to fill nutritional gaps in your eating pattern.Multivitamins are formulated for absorption with fermented nutrients and made with organic vegetables and herbs. Need help remembering to take your vitamins? Try setting a phone alarm or getting a vitamin case. Make a habit of taking your vitamins at the same time every day.</p><br><br>
+            
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <h3>Exercise Routines</h3>
+            <img src="image4.jpg" alt="People Exercising">
+            <p>Regular exercise can improve your physical and mental health. Try to incorporate at least 30 minutes of activity into your daily routine.</p><br><br>
+            <h3>Choose Organic Foods When Possible</h3>
+            <img src="a-composition-of-varied-organic-food-created-with-generative-ai-photo.jpg" alt="organic food">
+            <p>Organic foods are good for you and for the planet. Pure and simple. The benefits of choosing organic include better nutrient content and less chemical residue. When possible, reach for organic meats, cheeses, and produce at the store. Look for organic certifications on labels to ensure your food was grown with care for the planet. Farmers’ markets, co-ops, and local farms are great places to find organic options</p><br><br>
+            <h3>Mental Health</h3>
+            <img src="istockphoto-1217029407-612x612.jpg" alt="Meditation">
+            <p>Mental health is just as important as physical health. Practice mindfulness, meditation, or other activities that help reduce stress.</p><br><br>
+            <h3>Get Enough Sleep</h3>
+            <image src="how-to-sleep-better-2200x1200.jpeg" alt="get enough sleep">
+            <p>Being well-rested is good for your wellness! That’s right, getting a full night’s sleep is an important part of holistic health. According to the CDC, adults aged 18-60 need a minimum of 7 hours of sleep a night. However, struggling to get to sleep is a common problem among adults. Inability to fall asleep and poor sleep quality can be due to a variety of reasons, from stress to noise to the distractions of technology. Improve your sleep naturally by establishing a nightly sleep routine. Turn off devices such as phones and computers an hour before you go to bed. Reserve that time for quiet activities such as reading, journaling, or drinking herbal tea. Before bed, try taking a targeted serving of of non-groggy melatonin to combat restlessness and promote deep, sound sleep.</p><br><br>
+            <h3>Listen to Music</h3>
+            <img src="smiling-attractive-asian-girl-dancing-in-headphones-isolated-on-white-2A8R9B7.jpg" alt="listning music">
+            <p>f you begin to feel overwhelmed by the stresses of the day, try listening to music. Research conducted by Johns Hopkins found that music has many positive health benefits, including reducing anxiety, lowering blood pressure, and improving sleep quality. Did you know that listening to a familiar song can even help with memory recall? Listen to music while working or before going to bed at night to tap into its calming effects.</p><br><br>
+            <h3>Get Outside</h3>
+            <img src="shutterstock_424172677-1200x800.jpg" alt="outside">
+            <p>Nature is a great remedy for stress. Sometimes, there is nothing better for your mental and emotional wellness than going outside. The American Heart Association says that spending time in nature can relieve stress, improve mood, and generally boost your well-being. During the workweek, consider stepping outside on your lunch break. On the weekends, participate in outdoor activities such as gardening, walking, or cycling.</p><br><br>
+            <h3>Minimize Your Sugar Intake</h3>
+            <img src="EatingWell_20230607_HiddenSugarsInPlainSight.jpg" alt="sugur">
+            <p>Cutting back on sugar in your diet can help you manage weight and improve your overall nutrition. It seems simple enough, but do you know what to look for? Sugar comes in a lot of different forms; some you may recognize and some you may not. Check the nutrition label on packaging for ingredients such as sucrose, glucose, fructose, corn syrup, or hydrolyzed starch. All of these are sugars! A simple way to cut back on sugar is to make healthier choices in the store.
+
+                Reach for fresh, organic produce instead of processed foods.
+                Choose unsweetened oatmeal over that sugary cereal.
+                Consider replacing sweetened juice cocktails with 100% fruit juice (with no added sugar or flavors).
+                Swap your sweetened yogurt for plain yogurt; sweeten it yourself with fresh fruit.
+                Cut back on sugar in cooking or baking recipes (you probably won’t even miss it!)</p>
+            
+        </div>
+    </div>
+
+    <section id="submit-blog">
+        <h2>Submit Your Own Blog</h2>
+        <a href="blog p1.html">Click here</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Health and Wellness Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slides");
+            const dots = document.getElementsByClassName("dot");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].style.display = "block";
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex - 1].className += " active";
+
+            setTimeout(showSlides, 1000); // Change slide every 10 seconds
+        }
+    </script>
+
+</body>
+</html>
